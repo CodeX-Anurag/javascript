@@ -15,8 +15,9 @@ Types
         ├── Array
         ├── Functions
         └── Objects
-        */
+*/
 
+                   //     Primitives    
 
 const types = {
   Primitive: ["String", "Boolean", "Number", "null", "undefined", "Symbol"],
@@ -36,7 +37,7 @@ const types = {
   console.log(typeof balance);   // type batayega char hai ya number 
   
   console.log(another_balance);
-  console.log(typeof another_balance);    // object , # so this become a object this means every   premetive can become a adv data type or non premetive i.e. is object 
+  console.log(typeof another_balance);    //  Number : 999  # so this become a object this means every   premetive can become a adv data type or non premetive i.e. is object 
 
 
 /*                         Boolean                    */ 
@@ -44,7 +45,7 @@ const types = {
  let ismotaPro = new Boolean(false) ;
  
  console.log(isAnuragPro);
- console.log(ismotaPro);
+ console.log(ismotaPro);  
 
 
 /*                   Null & Undefined                 */ 
@@ -56,9 +57,6 @@ const types = {
  console.log(lastname);
 
 
-
-
-
 /*                         String                      */ 
 
  /*
@@ -67,7 +65,7 @@ const types = {
  */
  
  let username = "Anurag";
- console.log(username)
+ console.log(username);
  let greetMessage = `Hello ${username} !`;
  console.log(greetMessage)
 
@@ -98,3 +96,27 @@ const types = {
  I'm fine`;    //With backticks:
  console.log(text);
  console.log(te_xt);
+
+
+
+//                   Non - Primitives 
+ 
+ let obj = {
+  name: "Anurag", // this is primitive
+  age: 21,        // this is primitive
+};
+
+console.log(obj);
+console.log(obj.name);
+console.log(typeof obj);
+    /*  so why we get object if its is primitive inside because while creading a obj we get a certain fix space inside it can be either premitive or non-primitive 
+ Note : if we declare a variable whit const 
+  const obj = {
+  name: "Anurag", // this is primitive
+  age: 21,        // this is primitive
+};   we cant change it but in obj we can change it  for ex.  name age etc */
+
+obj.branch = "CSE"
+console.log(obj.branch);
+console.log(obj);  // adding a branch in obj 
+
