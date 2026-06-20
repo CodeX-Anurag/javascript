@@ -120,3 +120,24 @@ obj.branch = "CSE"
 console.log(obj.branch);
 console.log(obj);  // adding a branch in obj 
 
+
+
+
+//                                  Array      
+
+let tittle = ["Learning Basics of Array",true];
+console.log(tittle[0]);
+
+
+
+console.log("1" + 1 );    // 11
+console.log(1 + "1");     // 11
+
+
+let isvalue = true;
+console.log(isvalue + 1);   
+
+                          
+
+
+
