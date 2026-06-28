@@ -606,297 +606,229 @@ emp.salary = 60000;
 
 Why Setter?
 
-Normal assignment
+    Normal assignment
+    
+    emp.salary=-5000;   
+          ↓  
+    Koi checking nahi.
+    
+           Setter  
+             ↓
+    Har assignment pe validation.
+    
 
-emp.salary=-5000;
-
-↓
-
-Koi checking nahi.
-
-Setter
-
-↓
-
-Har assignment pe validation.
-
-Getter
-
-Ab maan lo company salary hide karna chahti hai.
-
-Normal
-
-console.log(emp.salary);
-
-Output
-
-60000
-
-Company nahi chahti.
-
-To
-
-get salary(){
-
-    return "Salary is Private";
-
-}
-
-Execution
-
-console.log(emp.salary);
-
-JavaScript automatically
-
-get salary()
-
-call karega.
-
-Flow
-
-emp.salary
-
-     │
-
-     ▼
-
-Getter
-
-     │
-
-     ▼
-
-return
-
-"Salary is Private"
-
-Output
-
-Salary is Private
-Important Thing
-
-Notice
-
-Getter ko call karne ke liye
-
-emp.salary
-
-likhte hain.
-
-Not
-
-emp.salary()
-
-❌
-
-Because getter function nahi lagta.
-
-Wo property ki tarah behave karta hai.
-
-Complete Code
-class Employee {
-
-    constructor(name, salary) {
-        this.name = name;
-        this._salary = salary;
+   #]            Getter
+                   ↓
+    Ab maan lo company salary hide karna chahti hai.
+    
+    Normal
+  
+    console.log(emp.salary);
+    
+    Output : 60000
+    
+    Company nahi chahti. To
+    
+    get salary(){ 
+        return "Salary is Private";
+    
     }
+    
+    /*Execution
+    
+    console.log(emp.salary);
+    
+    JavaScript automatically  --> get salary() --> call karega.
+    
+    Flow 
+      emp.salary
+          │
+          ▼
+        Getter  
+          │
+          ▼
+       return
+          │
+          ▼
+    "Salary is Private"
+    
+    Output :  Salary is Private
 
-    get salary() {
-        return this._salary;
-    }
-
-    set salary(value) {
-
-        if (value < 0) {
-            console.log("Invalid Salary");
+    Important Thing
+    
+  Notice : Getter ko call karne ke liye
+    
+    emp.salary  --> likhte hain.
+    
+    Not  ❌-->  emp.salary()
+    
+    Because getter function nahi lagta.  Wo property ki tarah behave karta hai.*/
+    
+  
+    class N_Employee {
+    
+        constructor(name, salary) {
+            this.name = name;
+            this._salary = salary;
         }
-        else {
-            this._salary = value;
+    
+        get salary() {
+            return this._salary;
         }
-
+    
+        set salary(value) {
+    
+            if (value < 0) {
+                console.log("Invalid Salary");
+            }
+            else {
+                this._salary = value;
+            }
+    
+        }
+    
     }
-
-}
-
-let emp = new Employee("Anurag", 50000);
-
-console.log(emp.salary);
-
-emp.salary = 60000;
-
-console.log(emp.salary);
-
-Output
-
-50000
-
-60000
-Memory Diagram
-
-Initially
-
-emp
-
-┌──────────────────────┐
-│ name = Anurag        │
-│ _salary = 50000      │
-└──────────────────────┘
-
-Read
-
-emp.salary
-
-Flow
-
-emp.salary
-
-      │
-
-      ▼
-
-Getter
-
-      │
-
-      ▼
-
-_salary
-
-      │
-
-      ▼
-
-50000
-
-Write
-
-emp.salary=70000
-
-Flow
-
-emp.salary=70000
-
-        │
-
-        ▼
-
-Setter
-
-        │
-
-        ▼
-
-_salary=70000
-
-Memory
-
-emp
-
-┌──────────────────────┐
-│ name = Anurag        │
-│ _salary = 70000      │
-└──────────────────────┘
-Why _salary?
-
-Tum notice karoge ki maine likha:
-
-this._salary
-
-instead of
-
-this.salary
-Agar hum likhen:
-set salary(value){
-    this.salary = value;
-}
-
-To kya hoga?
-
-this.salary = value
-        │
-        ▼
-Setter call
-        │
-        ▼
-this.salary = value
-        │
-        ▼
-Setter call
-        │
-        ▼
-Setter call
-        │
-        ▼
-Setter call...
-
-Infinite loop! 💥
-
-Isliye hum actual value ko kisi aur property me rakhte hain, jaise:
-
-this._salary
-
-Ya modern JavaScript me:
-
-#salary
-_salary vs #salary
-_salary
-this._salary = 50000;
-Bas naming convention hai.
-Bahar se access ho sakta hai.
-console.log(emp._salary); // 50000
-#salary
-#salary;
-
-Ye private field hai.
-
-console.log(emp.#salary);
-
-❌ Syntax Error
-
-Sirf class ke andar access kar sakte ho.
-
-Final Flow Diagram
-                Employee
-
-        ┌──────────────────────┐
-        │ name                 │
-        │ _salary / #salary    │
-        │                      │
-        │ get salary()         │
-        │ set salary(value)    │
-        └──────────────────────┘
-
-              Reading
-
-emp.salary
-      │
-      ▼
-Getter
-      │
-      ▼
-Return salary
-
-────────────────────────────────
-
-              Writing
-
-emp.salary = 70000
-      │
-      ▼
-Setter
-      │
-      ▼
-Validation
-      │
-      ▼
-Store salary
-Interview Definition (Easy)
-Getter → Automatically runs when you read a property. (emp.salary)
-Setter → Automatically runs when you assign a property. (emp.salary = 60000)
-
-
-
-
-
-
-
+    
+    let emp = new N_Employee("Anurag", 50000);
+    
+    console.log(emp.salary);
+  
+    emp.salary = 60000;    // getter call 
+    console.log(emp.salary);
+    
+   /* Output : 50000
+               60000
+
+    Memory Diagram :
+    
+    Initially
+
+           emp
+    ┌──────────────────────┐
+    │ name = Anurag        │
+    │ _salary = 50000      │
+    └──────────────────────┘
+    
+  #] Read  
+    emp.salary
+    
+    Flow
+      emp.salary 
+          │
+          ▼
+        Getter
+          │ 
+          ▼
+       _salary
+          │  
+          ▼  
+        50000
+    
+  #] Write
+    
+    emp.salary=70000
+    
+    Flow
+    emp.salary=70000 
+            │
+            ▼
+         Setter
+            │
+            ▼
+      _salary=70000
+    
+    Memory
+    
+            emp 
+    ┌──────────────────────┐
+    │ name = Anurag        │
+    │ _salary = 70000      │
+    └──────────────────────┘
+  
+  #] Why _salary?
+    
+    Tum notice karoge ki maine likha: ->  this._salary   instead of -> this.salary
+
+    Agar hum likhen:
+    set salary(value){
+        this.salary = value;
+    }
+    
+    To kya hoga?
+    
+    this.salary = value
+            │
+            ▼
+    Setter call
+            │
+            ▼
+    this.salary = value
+            │
+            ▼
+    Setter call
+            │
+            ▼
+    Setter call
+            │
+            ▼
+    Setter call...
+    
+    Infinite loop! 💥  Isliye hum actual value ko kisi aur property me rakhte hain, jaise: --> this._salary
+    
+    Ya modern JavaScript me:
+    #] _salary vs #salary
+    _salary
+    this._salary = 50000;
+    Bas naming convention hai.  Bahar se access ho sakta hai.
+    console.log(emp._salary); // 50000
+    
+
+    #] #salary;
+    Ye private field hai.
+    console.log(emp.#salary); 
+    ❌ Syntax Error ->  Sirf class ke andar access kar sakte ho.
+    
+    Final Flow Diagram
+                    Employee
+            ┌──────────────────────┐
+            │ name                 │
+            │ _salary / #salary    │
+            │                      │
+            │ get salary()         │
+            │ set salary(value)    │
+            └──────────────────────┘
+                    Reading
+                  emp.salary
+                      │
+                      ▼
+                    Getter
+                      │
+                      ▼
+                Return salary
+    
+    ────────────────────────────────
+    
+                  Writing
+    
+            emp.salary = 70000
+                     │
+                     ▼
+                   Setter
+                     │
+                     ▼
+                Validation
+                     │
+                     ▼
+               Store salary
+
+ Interview Definition (Easy)
+  #] Getter → Automatically runs when you read a property. (emp.salary)
+  #] Setter → Automatically runs when you assign a property. (emp.salary = 60000)
+*/
+    
+    
+    
+    
+    
+    
+    
