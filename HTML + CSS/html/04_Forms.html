@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form action="">                               <!-- form tag is used to create a form -->
+        <label for="name">Name</label>             <!-- label tag is used to create a label for an input field -->
+        <input type="text" id="name" name="name">  <!-- input tag is used to create an input field -->
+        <br>                                       <!-- br tag is used to create a line break -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <br>
+
+        <!-- placeholder is for what you have to write in box -->
+        <label for="password">Password</label>   
+        <input placeholder="Enter your password" type="password" id="password" name="password">  <!-- here we can also give placeholder to the input field -->
+        <br>
+
+
+        <input type="submit" value="Submit">  <!-- submit button -->    
+        <button type="reset">Reset</button>   <!-- reset button  , reset ki jagha submit bhi likh sakte ho aap -->
+        <br>
+       
+       <div>  
+         <h2>Choose your hobbies</h1>
+          <form action="">
+             <label for="Games">
+              Cricket :<input type="checkbox" name="" id="">  <!-- checkbox -->
+             </label>
+  
+             <label for="Games">
+              Football :<input type="checkbox" name="" id="">  <!-- checkbox -->
+             </label>
+  
+             <label for="Games">
+              Hockey :<input type="checkbox" name="" id="">  <!-- checkbox -->
+             </label>
+            
+             <label for="Music">
+               Music :<input type="radio" name="" id="">  <!-- radio button o-->
+             </label>
+              <br>
+ 
+             <label for="Games">Select an Indoor Game:</label>
+              <select name="Games" id="Games">
+                  <option value="Chess">Chess</option>
+                  <option value="Carom">Carom</option>
+             </select>
+               <br>
+
+             <label for="Months">Choose a month :
+                <input type="month" id="Months" name="Months">
+             </label>
+              <br>
+             <button type="submit">Submit</button>
+          </form>
+        </div>  
+    </form>
+</body>
+</html>
