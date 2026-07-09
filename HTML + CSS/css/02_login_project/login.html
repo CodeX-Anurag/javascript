@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+
+    <!-- ab body ke andar jate
+     some colour code you have to remember 
+     #1a1a1a    , #2c2c2c  , #3a3a3a   , #fff   
+             afte this you can coustomize your colour 
+     *] for background color  :-> bgc:-->
+
+    <style>     
+      body {                   
+       font-family: Arial, Helvetica, sans-serif;    
+         background-color: #1a1a1a;  
+         margin: 0;       
+         padding: 0;
+         height: 100vh;
+         display: flex; /* eske baad magic hota hai ye do command se */
+         justify-content:center;
+         align-items: center;
+    }
+    /*] height :100vh is used for full screen height :- view height
+    *] for display: flex :- use df:
+    *] here margin : 0 and padding : 0 is used for remove default margin and padding of body
+    *] for justify-content: centre :- use js: 
+    *] for align-items: centre :- use ai:     
+    
+    
+    #] ab div ke andar jate hai aur uske liye style karte hai */
+    .win{
+        background-color:#2c2c2c;
+        border-radius: 10px;            /* bo:  ->  bo  apne aap sugestion aa jayenge */   
+        padding: 20px;
+        width: 300px;  
+            }
+
+    h1{
+        color:lightseagreen;
+        text-align: center;
+        margin-bottom: 20px;       /*] margin-bottom: 20px; is used for gap between h1 and input field */
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;   /*] flex-direction: column; is used for vertical alignment of input fields */
+           /*flex-direction: column-reverse;  ] flex-direction: column-reverse; is used for vertical alignment of input fields in reverse order */
+        gap: 10px;
+        width: 300px;
+    }
+
+    input{
+        margin-bottom: 1px;
+        padding: 6px;
+        border-radius: 5px;
+        background-color:cornsilk;
+    }
+
+    button{
+        background-color:rgb(127, 252, 2);
+        color:indigo;
+        border-radius: 5px;
+        padding: 6px;
+    }
+    button:hover{
+        background:rgb(69, 138, 0)
+    }
+
+   </style>
+</head>
+
+<body>
+    <div class="win">
+        <h1>Login </h1>
+          <form>
+            <input type="email" name="email" id="email" placeholder="                        Enter your Email">
+            <input type="password" name="password" id="password" placeholder="                     Enter your Password">
+            <button type="submit">login</button>
+    <!-- ab etna karne ke baad upar head pe jate aur style change karenge-->
+         </form>      
+    </div>
+</body>
+</html>
