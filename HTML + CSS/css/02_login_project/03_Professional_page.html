@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Login Page</title>
+
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg, #667eea, #764ba2);
+    }
+    
+    .login{
+        width:380px;
+        background:white;
+        padding:40px;
+        border-radius:15px;
+        box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    }
+    
+    h1{
+        text-align:center;
+        color:#5b21b6;
+        margin-bottom:10px;
+    }
+    
+    h2{
+        text-align:center;
+        color:#666;
+        font-size:18px;
+        margin-bottom:25px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"]{
+        width:100%;
+        padding:12px;
+        margin-bottom:15px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:15px;
+        outline:none;
+        transition:.3s;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus{
+        border-color:#2563eb;
+        box-shadow:0 0 8px rgba(37,99,235,.3);
+    }
+    
+    .options{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:20px;
+        font-size:14px;
+    }
+    
+    .options label{
+        display:flex;
+        align-items:center;
+        gap:5px;
+    }
+    
+    .options input{
+        width:auto;
+    }
+    
+    .options a{
+        text-decoration:none;
+        color:#2563eb;
+    }
+    
+    .options a:hover{
+        text-decoration:underline;
+    }
+    
+    button{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:8px;
+        background:#2563eb;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+        transition:.3s;
+    }
+    
+    button:hover{
+        background:#1d4ed8;
+    }
+    
+    p{
+        text-align:center;
+        margin-top:20px;
+    }
+    
+    p a{
+        color:#2563eb;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    
+    p a:hover{
+        text-decoration:underline;
+    }
+    
+</style>
+
+</head>
+    <body>
+        <div class="login">
+             <h1>👤 Welcome Back</h1>
+             <h2>Sign in to continue</h2>
+            <form>
+                <input type="text" placeholder="👤 Enter your username">
+                <input type="email" placeholder="📧 Enter your email">
+                <input type="password" placeholder="🔒 Enter your password">
+        
+                <div class="options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember Me
+                    </label>
+        
+                    <a href="forgot_password.html">Forgot Password?</a>
+        
+                </div>
+
+               <button type="submit">Login</button>
+  
+                  <p>
+                     Don't have an account?
+                     <a href="signup.html">Sign Up</a>
+                  </p>
+
+            </form>
+
+        </div>
+
+    </body>
+</html>
